@@ -7,16 +7,22 @@
 
 
 ### Jak policzyć?
+
+ Adres IP na binarny , potem maska na binarny (255.255.255.0) -> (11111111 11111111 11111111 0 ) 
+ Liczba jedynek w masce = 24, wiec 24 bity na adres sieci
+ W sumie 32, 32 - 24 = 8 bitow na adres hostów
+ 
+ 
 #### Adres sieci
 
-1. 
-2.
+1. zamieniamy dec na binarne
+2. mnozenie binarne maski i adresu
 3.
 
 #### Adres rozgłoszeniowy
 
-1. 
-2.
+1. odwrotnosc maski
+2. 
 3.
 
 
