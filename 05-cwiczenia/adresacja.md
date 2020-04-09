@@ -150,6 +150,23 @@ maska /16 = 255.255.0.0
 
 1.
   * Podziel sieć ```192.168.1.0``` na 16 równych podsieci
+  
+   MASKA : 255.255.255.11110000 = 255.255.255.240
+   Liczba hostów max = 2**(32-28) - 2 = 14 hostów w każdej podsieci
+   
+   adres pierwszej podsieci: 
+   192.168.1.0 - adr pierwszej sieci
+   11111111 11111111 11111111 11110000
+   00000000 00000000 00000000 00001111
+   0.0.0.15
+   + 192.168.1.0
+   = 192.168.1.15 - adres rozgłoszeniowy pierwszej podsieci
+   
+   adres kolejnej podsieci = adres rozgloszeniowy poprzedniej + 1 
+   192.168.1.15 + 1 = 192.168.1.16 
+   adres rozgłsozeniowy drugiej podsieci = 0.0.0.15 + 192.168.1.16 = 192.168.1.31
+   
+   
 ##   
 ## | Adres sieci |  zakres hostów   | Adres Rozgłoszeniowy |
 | ``192.168.1.0``    | | |
