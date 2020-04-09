@@ -17,13 +17,13 @@
 
 1. zamieniamy dec na binarne
 2. mnozenie binarne maski i adresu
-3.
+3. na dziesietne
 
 #### Adres rozgłoszeniowy
 
 1. odwrotnosc maski
-2. 
-3.
+2. negacja
+3. dodanie do adresu sieci
 
 
 ## Podział na równą ilość podsieci
@@ -112,6 +112,30 @@ Mając dany adres hosta i maskę znajdź:
 ## Zadanie
 
 0. Znajdz wszystkie parametry sieci dla hosta o adresie 172.16.128.64 / 16
+
+maska /16 = 255.255.0.0
+adres sieci:
+        host  10101100 00010000 10000000 01000000
+        maska 11111111 11111111 00000000 00000000
+     AND      ___________________________________
+              10101100 00010000 00000000 00000000
+              172     . 16      .    0   .   0  = ADRES SIECI
+              
+adres rozgloszeniowy:
+
+       maska 11111111 11111111 00000000 00000000
+         NEG 00000000 00000000 11111111 11111111
+               0     . 0       .  255  .   255
+       + siec 172     . 16      .  0    .   0 
+            ___________________________________
+             172      . 16      . 255    . 255 = ADRES ROZGLOSZENIOWY
+             
+             
+MAX hostów = 2^(32 - 16) - 2 = 2^16 - 2 = 65 534
+pierwszy host = 172.16.0.1
+ostatni host = 172.16.255.254
+
+
 ##   
 ## | Parametr |  wartość   | 
 | ``ip``    | 192.168.1.145| 
