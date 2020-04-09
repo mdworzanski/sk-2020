@@ -114,14 +114,16 @@ Mając dany adres hosta i maskę znajdź:
 0. Znajdz wszystkie parametry sieci dla hosta o adresie 172.16.128.64 / 16
 
 maska /16 = 255.255.0.0
-adres sieci:
+
+*adres sieci:
+
         host  10101100 00010000 10000000 01000000
         maska 11111111 11111111 00000000 00000000
      AND      ___________________________________
               10101100 00010000 00000000 00000000
               172     . 16      .    0   .   0  = ADRES SIECI
               
-adres rozgloszeniowy:
+*adres rozgloszeniowy:
 
        maska 11111111 11111111 00000000 00000000
          NEG 00000000 00000000 11111111 11111111
@@ -131,9 +133,9 @@ adres rozgloszeniowy:
              172      . 16      . 255    . 255 = ADRES ROZGLOSZENIOWY
              
              
-MAX hostów = 2^(32 - 16) - 2 = 2^16 - 2 = 65 534
-pierwszy host = 172.16.0.1
-ostatni host = 172.16.255.254
+*MAX hostów = 2^(32 - 16) - 2 = 2^16 - 2 = 65 534
+*pierwszy host = 172.16.0.1
+*ostatni host = 172.16.255.254
 
 
 ##   
