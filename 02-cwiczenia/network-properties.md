@@ -29,12 +29,13 @@ Wejściowe parametry sieci
 Weryfikacja połączenia
 
 Polecenie
-```
-```
+
+ping 10.0.15.4
+ping 10.0.15.6
 
 Efekt
-```
-```
+
+jest połączenie
 
 Statyczna konfiguracja parametrów połączenia
 Wejściowe parametry sieci
