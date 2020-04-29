@@ -21,13 +21,13 @@
 
 | subcommand    |  polecenie   | opis  |
 | ------------- |:-------------| :---------------| 
-|   ``addr``    |                               | infirmacje o adresacji i własnościach interfejsów |
-|               |   ``ip addr``                 | informacja o wszystkich interfejsach              |
+|   ``addr``    |   ``ip addr``                 | infirmacje o adresacji i własnościach interfejsów |
+|   ``ifconfig``|   ``ip addr``                 | informacja o wszystkich interfejsach              |
 |               |   ``ip addr show dev enp0s3`` | informacja o konkretnym interfejsie               |
-|   ``link``    |                               |  |
-|   ``route``   |  | |
-|   ``maddr``   |  | |
-|   ``neigh``   |  | |
+|   ``link``    |   ``ip link set``             | zmiany ustawień istniejących interfejsów          |
+|   ``route``   |   ``ip route``                | konfiguracja tablic routingu |
+|   ``maddr``   | ``ip maddr``                  | informacje na temat multicast i modyfikacja |
+|   ``neigh``   | ``ip neigh``                  | służy do zarządzania i wyświetlania tablicy sąsiedztwa |
 |   ``help``    |  | |
 
 
