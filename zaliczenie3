@@ -1,0 +1,61 @@
+DOKUMENTACJA DO ZALICZENIA:
+
+## Schemat
+
+![zadanie 1](office.svg)
+
+## Wymagania
+
+W sieci pracują komputery biurowe oraz urządzenia siecowe współdzielące zasoby. Do tej pory organizacja borykała się z ręczna konfiguracją urządzeń oraz adresami IP które dla ludzi z poza kadry technicznej były niezrozumiałe. Postanowiono:
+
+* Wykorzystać usługę DHCP do nadawania adresów w sposób automatyczny dla wszystkich stacji roboczych
+* Serwer oraz durządzenia IP tj: drukarka muszą posiadać stałe adresy celem zminimalizowanai potrzeby rekonfiguracji ustawiań klientów
+* Wprowadzić translację pomiędzy Adresami IP oraz nazwami domenowymi dla kluczowych zasobów
+   - erp.mojaorganizacja.pl
+   - drukarka.mojaorganizacja.pl
+   - router.mojaorganizacja.pl
+* Wszystkie urządzenia łączą się z siecią internet z wykorzystaniem bramy NAT
+* Wykorzystać podsieć rozmiaru /22 pozwalającej zaadresować co najmniej 600 urządzeń
+
+## Zawartość dokumentacji
+
+ * Charakterystyka rozwiazania 
+      Utworzono serwer DHCP przypisujący IP automatycznie przykładowym dwóm komputerom. Utworzono także na serwerze uslugę DNS, która pozwwala na komunikację ze serwerem, drukarką i routerem za pomocą ich nazw (router.organizacja.pl itd.). Utworzono także router NAT, który pozwala się na komunikowanie ze światem zewnętrzym poprzez tłumaczenie adresów na publiczne.
+ 
+ * Adresy sieci IP
+      sieć domowa: 10.10.200.0 /22
+      router: 10.10.200.1 /22
+      serwer: 10.10.200.2 /22
+      drukarka: 10.10.200.3 /22
+      dwa komputery DHCP od 10.10.200.100 /22
+      "uproszczony" Internet sieci: 10.15.10.0 , 192.168.10.0
+      
+ * Oprogramowanie wykorzystane do realizacji poszczególnych wymagań
+ 
+   Wykonane w Cisco Packet Tracer
+   
+ * Kluczowa konfiguracja oprogramowania pozwalająca na odtworzenie stanu po reinstalacji środowiska
+    1. Konfiguracja routera NAT
+         interface Internet:
+            IP adress: 10.15.10.1 /22
+            gateway: 10.15.10.2
+         LAN interface:
+            IP adress: 10.10.200.1 /22
+    2. Konfiguracja DHCP
+         usługa DHCP włączona na serwerze o IP 10.10.200.2 /22
+         gateway: 10.10.200.1
+         start ip adress: 10.10.200.100 /22
+         maximum number of users: 700
+    3. Konfiguracja DNS
+         DNS uruchomiony na serwerze o IP 10.10.200.2 /22
+         DNS Server 10.10.200.2
+         ustawione nazwy dla:
+         - 10.10.200.3 drukarka.organizacja.pl
+         - 10.10.200.2 erp.organizacja.pl
+         - 10.10.200.1 router.organizacja.pl
+    4. Konfiguracja interfejsów sieciowych
+         - router NAT podłączony za pomocą skrętki ze switchem oraz z kolejnym routerem złączem            FastEthernetowym
+         - kolejne routery połączone za pomocą GigabitEthernet 5.5.5.5 /24 oraz 5.5.5.6 /24 z              routingiem statycznym
+         - serwer działający w sieci zewnętrznej "uproszczonym Internecie" o ip 192.168.10.10/24            z gateway 192.168.10.1 połączony za pomocą FastEthernet         
+
+
