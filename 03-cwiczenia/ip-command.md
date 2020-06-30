@@ -21,14 +21,38 @@
 
 | subcommand    |  polecenie   | opis  |
 | ------------- |:-------------| :---------------| 
-|   ``addr``    |   ``ip addr``                 | infirmacje o adresacji i własnościach interfejsów |
-|   ``ifconfig``|   ``ip addr``                 | informacja o wszystkich interfejsach              |
+|   ``addr``    |                               | informacje o adresacji i własnościach interfejsów |
+|               |   ``ip addr``                 | informacja o wszystkich interfejsach              |
 |               |   ``ip addr show dev enp0s3`` | informacja o konkretnym interfejsie               |
-|   ``link``    |   ``ip link set``             | zmiany ustawień istniejących interfejsów          |
-|   ``route``   |   ``ip route``                | konfiguracja tablic routingu |
-|   ``maddr``   | ``ip maddr``                  | informacje na temat multicast i modyfikacja |
-|   ``neigh``   | ``ip neigh``                  | służy do zarządzania i wyświetlania tablicy sąsiedztwa |
-|   ``help``    |  | |
+|               |   ``ip addr add 192.168.1.1/24 dev em1`` | dodaje adres 192.168.1.1/24 do interfejsu em1               |
+|               |   ``ip addr del 192.168.1.1/24 dev em1`` | usuwa adres 192.168.1.1/24 z interfejsu em1                |
+|   ``link``    |                               | zarządza i wyświetla stan wszystkich intefejsów|
+|               |   ``ip link`` | informacje o wszystkich interfejsach              |
+|               |   ``ip link show dev em1`` | informacje o interfejsie o nazwie em1              |
+|               |   ``ip -s link`` | statystyki interfejsu            |
+|               |   ``ip link set`` | zmienia status interfejsu            |
+|               |   ``ip link set em1 up`` | zmienia status interfejsu em1 na online            |
+|               |   ``ip link set em1 down`` | zmienia status interfejsu em1 na offline            |
+|   ``route``   |  | wyświetla i zmienia tablice routingu|
+|               |   ``ip route`` | informacje o wszystkich tablicach routingu             |
+|               |   ``ip route add default via 192.168.1.1 dev em1`` | dodaje domyślny routing przez lokalną bramę 192.168.1.1 która może być połączona przez interfejs em1            |
+|               |   ``ip route add 192.168.1.0/24 via 192.168.1.1`` | dodaje routing do sieci  192.168.1.0/24 przez bramę 192.168.1.1            |
+|               |   ``ip route delete 192.168.1.0/24 via 192.168.1.1`` | usuwa routing do sieci 192.168.1.0/24 przez bramę 192.168.1.1             |
+|               |   ``ip route replace 192.168.1.0/24 dev em1`` | zmienia (lub dodaje jeśli nie zdefiniowano) routing do sieci 192.168.1.0/24 przez interface em1           |
+|               |   ``ip route get  192.168.1.5`` | wyświetla tablicę routingu do sieci  192.168.1.5             |
+|   ``maddr``   |  | zarządza i wyświetla adresy IP multicast|
+|               |   ``ip maddr`` | informacje o IP multicast dla wszystkich interfejsów           |
+|               |   ``ip maddr show dev em1`` | informacje o IP multicast dla interfejsu em1            |
+|   ``neigh``   |  | zarządza i wyświetla tablice sąsiedztwa |
+|               | ``ip neigh``  | pokazuje tablice sąsiedztwa |
+|               | ``ip neigh show dev em1``  | pokazuje tablice sąsiedztwa dla interfejsu em1 |
+|   ``help``    |  | lista komend i argumentów do każdej z subkomend|
+|      | ``ip help`` | |
+|      | ``ip addr help`` | |
+|      | ``ip link help`` | |
+|      | ``ip neigh help`` | |
+
+
 
 
 ### Zadanie
