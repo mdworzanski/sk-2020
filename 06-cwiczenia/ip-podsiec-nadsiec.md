@@ -56,7 +56,7 @@ Zadanie
    * Do konfiguracji wykorzystaj dane z tabeli powyżej
    * Rozszerz istniejącą konfigurację dzieląc istnijącą sieć dla ``PC2`` na 3 podsieci zgodnie z diagramem
    * Przetestuj połączenie pomiędzy wszystkimi elementami sieci ``PC1->PC2`` ``PC1->PC4``
-   * Zapewnij permanentną konfigurację, dodając odpowiednie wpisy w plikach konfiguracji
+   * Zapewnij permanentną konfigurację dodając odpowiednie wpisy w plikach konfiguracji
 
 
 Zadanie do domu
