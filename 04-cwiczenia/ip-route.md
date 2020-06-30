@@ -24,7 +24,7 @@
 
 ![zadanie 4](example-network.svg)
 
-### Zadanie
+###  Zadanie
 
 ![zadanie 4](cwiczenia4.svg)
 
